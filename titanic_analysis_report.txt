@@ -1,0 +1,65 @@
+Titanic Survival Statistical Analysis Report
+==================================================
+Dataset shape: 891 rows, 16 columns
+Dataset columns: PassengerId, Survived, Pclass, Name, Sex, Age, SibSp, Parch, Ticket, Fare, Cabin, Embarked, FamilySize, FarePerPerson, IsChild, WomenOrChild
+
+Manual Missing Value Count
+PassengerId: 0
+Survived: 0
+Pclass: 0
+Name: 0
+Sex: 0
+Age: 177
+SibSp: 0
+Parch: 0
+Ticket: 0
+Fare: 15
+Cabin: 687
+Embarked: 2
+
+Class-wise Age Medians Used for Filling
+Pclass 1: 37.00
+Pclass 2: 29.00
+Pclass 3: 24.00
+Fare median used to replace invalid fares: 14.50
+
+Survival Rate by Group
+WomenOrChild: 72.29%
+Other: 16.45%
+
+Women and Children First Analysis
+pandas_group_size: 350
+manual_group_size: 350
+bitwise_group_size: 350
+others_size: 541
+women_child_survival_rate: 72.29%
+others_survival_rate: 16.45%
+
+Sampled Group Comparison
+survivor_avg_age: 28.81
+survivor_avg_fare: 50.54
+survivor_avg_family: 2.08
+non_survivor_avg_age: 32.77
+non_survivor_avg_fare: 24.39
+non_survivor_avg_family: 1.88
+
+Manual Statistics
+Age: {'mean': 29.06640852974186, 'median': 26.0, 'mode': 24.0, 'min': 0.42, 'max': 80.0}
+Fare: {'mean': 32.4483157126823, 'median': 14.5, 'mode': 8.05, 'min': 4.0125, 'max': 512.3292}
+FamilySize: {'mean': 1.904601571268238, 'median': 1, 'mode': 1, 'min': 1, 'max': 11}
+
+Pandas Statistics
+Age: {'mean': np.float64(29.06640852974186), 'median': np.float64(26.0), 'mode': np.float64(24.0), 'min': np.float64(0.42), 'max': np.float64(80.0)}
+Fare: {'mean': np.float64(32.44831571268238), 'median': np.float64(14.5), 'mode': np.float64(8.05), 'min': np.float64(4.0125), 'max': np.float64(512.3292)}
+FamilySize: {'mean': np.float64(1.904601571268238), 'median': np.float64(1.0), 'mode': np.int64(1), 'min': np.int64(1), 'max': np.int64(11)}
+
+Grouped Statistics
+Sex: {'male': {'Age': {'mean': np.float64(29.83218370883882), 'median': np.float64(27.0), 'mode': np.float64(24.0), 'min': np.float64(0.42), 'max': np.float64(80.0)}, 'Fare': {'mean': np.float64(25.900843154246065), 'median': np.float64(13.0), 'mode': np.float64(8.05), 'min': np.float64(4.0125), 'max': np.float64(512.3292)}, 'FamilySize': {'mean': np.float64(1.6655112651646446), 'median': np.int64(1), 'mode': np.int64(1), 'min': np.int64(1), 'max': np.int64(11)}}, 'female': {'Age': {'mean': np.float64(27.659235668789808), 'median': np.float64(24.0), 'mode': np.float64(24.0), 'min': np.float64(0.75), 'max': np.float64(63.0)}, 'Fare': {'mean': np.float64(44.479817834394886), 'median': np.float64(23.0), 'mode': np.float64(7.75), 'min': np.float64(6.75), 'max': np.float64(512.3292)}, 'FamilySize': {'mean': np.float64(2.343949044585987), 'median': np.float64(2.0), 'mode': np.int64(1), 'min': np.int64(1), 'max': np.int64(11)}}}
+Pclass: {3: {'Age': {'mean': np.float64(24.82468431771894), 'median': np.float64(24.0), 'mode': np.float64(24.0), 'min': np.float64(0.42), 'max': np.float64(74.0)}, 'Fare': {'mean': np.float64(13.793676374745434), 'median': np.float64(8.05), 'mode': np.float64(8.05), 'min': np.float64(4.0125), 'max': np.float64(69.55)}, 'FamilySize': {'mean': np.float64(2.0081466395112018), 'median': np.int64(1), 'mode': np.int64(1), 'min': np.int64(1), 'max': np.int64(11)}}, 1: {'Age': {'mean': np.float64(38.06212962962963), 'median': np.float64(37.0), 'mode': np.float64(37.0), 'min': np.float64(0.92), 'max': np.float64(80.0)}, 'Fare': {'mean': np.float64(84.49033564814805), 'median': np.float64(60.287499999999994), 'mode': np.float64(26.55), 'min': np.float64(5.0), 'max': np.float64(512.3292)}, 'FamilySize': {'mean': np.float64(1.7731481481481481), 'median': np.float64(1.0), 'mode': np.int64(1), 'min': np.int64(1), 'max': np.int64(6)}}, 2: {'Age': {'mean': np.float64(29.82516304347826), 'median': np.float64(29.0), 'mode': np.float64(29.0), 'min': np.float64(0.67), 'max': np.float64(70.0)}, 'Fare': {'mean': np.float64(21.135009239130436), 'median': np.float64(14.5), 'mode': np.float64(13.0), 'min': np.float64(10.5), 'max': np.float64(73.5)}, 'FamilySize': {'mean': np.float64(1.7826086956521738), 'median': np.float64(1.0), 'mode': np.int64(1), 'min': np.int64(1), 'max': np.int64(6)}}}
+Embarked: {'S': {'Age': {'mean': np.float64(29.13004658385093), 'median': np.float64(27.0), 'mode': np.float64(24.0), 'min': np.float64(0.67), 'max': np.float64(80.0)}, 'Fare': {'mean': np.float64(27.417544720496842), 'median': np.float64(14.4), 'mode': np.float64(8.05), 'min': np.float64(5.0), 'max': np.float64(263.0)}, 'FamilySize': {'mean': np.float64(1.984472049689441), 'median': np.float64(1.0), 'mode': np.int64(1), 'min': np.int64(1), 'max': np.int64(11)}}, 'C': {'Age': {'mean': np.float64(30.184047619047618), 'median': np.float64(27.0), 'mode': np.float64(24.0), 'min': np.float64(0.42), 'max': np.float64(71.0)}, 'Fare': {'mean': np.float64(59.95414404761905), 'median': np.float64(29.7), 'mode': np.float64(7.2292), 'min': np.float64(4.0125), 'max': np.float64(512.3292)}, 'FamilySize': {'mean': np.float64(1.75), 'median': np.float64(1.0), 'mode': np.int64(1), 'min': np.int64(1), 'max': np.int64(5)}}, 'Q': {'Age': {'mean': np.float64(25.551948051948052), 'median': np.float64(24.0), 'mode': np.float64(24.0), 'min': np.float64(2.0), 'max': np.float64(70.5)}, 'Fare': {'mean': np.float64(13.27602987012987), 'median': np.float64(7.75), 'mode': np.float64(7.75), 'min': np.float64(6.75), 'max': np.float64(90.0)}, 'FamilySize': {'mean': np.float64(1.5974025974025974), 'median': np.int64(1), 'mode': np.int64(1), 'min': np.int64(1), 'max': np.int64(6)}}}
+
+Functional Programming Results
+fare_median: 14.5
+fares_above_median_count: 434
+doubled_family_size_sample: [4, 4, 2, 4, 2, 2, 2, 10, 6, 4, 6, 2, 2, 14, 2, 2, 12, 2, 4, 2]
+total_fare: 28911.449299999967
